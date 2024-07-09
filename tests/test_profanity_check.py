@@ -1,4 +1,4 @@
-from profanity_protector import predict
+from profanity_check import predict
 
 # TODO: допилить
 # def test_edge_cases():

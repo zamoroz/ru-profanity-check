@@ -18,23 +18,23 @@ def package_files(directory):
 
 
 transformers_files = package_files(
-    'profanity_protector/data/model')
+    'profanity_check/data/model')
 
 setuptools.setup(
-    name="ru-profanity-protector",
+    name="ru-profanity-check",
     version="1.0.0",
     author="Andrey Morozov",
     author_email="back@laconism.pro",
     description="An even more robust fork of 'profanity-check'.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/zamoroz/ru-profanity-protector",
+    url="https://github.com/zamoroz/ru-profanity-check",
     packages=setuptools.find_packages(),
     install_requires=requirements,
-    package_data={'profanity_protector': transformers_files},
+    package_data={'profanity_check': transformers_files},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
-        "Natural Language :: English",
+        "Natural Language :: Russian",
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",

@@ -6,7 +6,7 @@ import torch
 import numpy as np
 
 
-model_path = pkg_resources.resource_filename('profanity_protector','data/model')
+model_path = pkg_resources.resource_filename('profanity_check','data/model')
 tokenizer = AutoTokenizer.from_pretrained(model_path)
 model = AutoModel.from_pretrained(model_path)
 
@@ -21,7 +21,7 @@ def embed_bert_cls(text, model, tokenizer):
 
 
 def load_faiss_index():
-    embs = np.loadtxt(pkg_resources.resource_filename('profanity_protector', 'data/embeddings.txt'))
+    embs = np.loadtxt(pkg_resources.resource_filename('profanity_check', 'data/embeddings.txt'))
     index = faiss.IndexFlatIP(embs.shape[1])
     index.add(embs)
     return index
