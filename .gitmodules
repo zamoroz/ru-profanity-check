@@ -1,0 +1,3 @@
+[submodule "profanity_check/data/model"]
+	path = profanity_check/data/model
+	url = https://huggingface.co/cointegrated/rubert-tiny2
