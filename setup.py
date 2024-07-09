@@ -1,5 +1,6 @@
 import setuptools
 import os
+import git
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -19,6 +20,17 @@ def package_files(directory):
 
 transformers_files = package_files(
     'profanity_check/data/model')
+
+
+cwd = os.getcwd()
+gitdir = os.path.dirname(os.path.realpath(__file__))
+os.chdir(gitdir)
+g = git.cmd.Git(gitdir)
+try:
+    g.execute(['git', 'lfs', 'pull'])
+except git.exc.GitCommandError:
+    raise RuntimeError("Make sure git-lfs is installed!")
+os.chdir(cwd)
 
 setuptools.setup(
     name="ru-profanity-check",
