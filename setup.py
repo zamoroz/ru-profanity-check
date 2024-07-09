@@ -1,6 +1,13 @@
 import setuptools
 import os
-import git
+import subprocess
+import sys
+
+try:
+    import git
+except ModuleNotFoundError:
+    subprocess.call([sys.executable, '-m', 'pip', 'install', 'gitpython'])
+    import git
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
