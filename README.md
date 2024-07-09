@@ -1,0 +1,1 @@
+# ru-profanity-check
