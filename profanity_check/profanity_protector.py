@@ -23,7 +23,7 @@ class ProfanityChecker:
 
     def load_faiss_index(self, embeddings):
         embs = np.array(embeddings)
-        index = faiss.IndexFlatIP(embs.shape[1])
+        index = faiss.IndexFlatIP(embs.shape[0])
         index.add(embs)
         return index
 
