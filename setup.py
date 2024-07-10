@@ -33,7 +33,7 @@ setuptools.setup(
     url="https://github.com/zamoroz/ru-profanity-check",
     packages=setuptools.find_packages(),
     install_requires=requirements,
-    package_data={'profanity_check': ["profanity_check/data/embeddings.txt"] + transformers_files},
+    package_data={'profanity_check': ["profanity_check/data/words.txt"] + transformers_files},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Natural Language :: Russian",
