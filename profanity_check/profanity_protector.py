@@ -29,7 +29,7 @@ class ProfanityChecker:
 
 
     def predict(self, text) -> float:
-        index = self.load_faiss_index(self.embed_bert_cls([text]))
+        index = self.load_faiss_index(self.embed_bert_cls(text))
         result = []
         for word in open(pkg_resources.resource_filename("profanity_check", "data/words.txt")).read().split():
             query_emb = self.embed_bert_cls(word)
